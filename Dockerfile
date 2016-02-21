@@ -1,9 +1,9 @@
 FROM alpine:edge
 MAINTAINER Christian Gatzlaff <cgatzlaff@gmail.com>
 
-RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
-	apk add --update --no-cache awake py-awake
+RUN apk add --no-cache awake py-awake --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
+# env variable
 ENV mac 11:11:11:11:11:11
 
 # start servers
